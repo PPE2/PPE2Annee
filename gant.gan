@@ -1,15 +1,15 @@
-<?xml version="1.0" encoding="UTF-8"?><project name="ppe organisation" company="" webLink="http://" view-date="2015-09-07" view-index="1" gantt-divider-location="1" resource-divider-location="300" version="2.7.1" locale="fr_FR">
+<?xml version="1.0" encoding="UTF-8"?><project name="ppe organisation" company="" webLink="http://" view-date="2015-09-07" view-index="0" gantt-divider-location="1" resource-divider-location="300" version="2.7.1" locale="fr_FR">
     <description/>
     <view zooming-state="default:3" id="gantt-chart">
         <field id="tpd3" name="Nom" width="33" order="0"/>
         <field id="tpd4" name="Date de début" width="33" order="1"/>
         <field id="tpd5" name="Date de fin" width="33" order="2"/>
         <timeline><![CDATA[2]]></timeline>
-        <option id="color.recent"><![CDATA[#ff0000 #6666ff #3399ff #9900ff #f4f4f4]]></option>
+        <option id="color.recent"><![CDATA[#cccc00 #ff0000 #6666ff #3399ff #9900ff #f4f4f4]]></option>
     </view>
     <view id="resource-table">
-        <field id="0" name="Nom" width="70" order="0"/>
-        <field id="1" name="Rôle par défaut" width="29" order="1"/>
+        <field id="0" name="Nom" width="56" order="0"/>
+        <field id="1" name="Rôle par défaut" width="43" order="1"/>
     </view>
     <!-- -->
     <calendars>
@@ -48,7 +48,13 @@
             <notes><![CDATA[effectué]]></notes>
         </task>
         <task id="15" name="script bdd" color="#ff0000" shape="1,0,0,0,1,0,0,0,1,0,0,0,1,1,1,1" meeting="false" start="2015-10-23" duration="6" complete="2" priority="4" expand="true">
-            <notes><![CDATA[effectué mais a revoir selon l'utilisation]]></notes>
+            <notes><![CDATA[effectué mais a revoir du a la modif du mcd]]></notes>
+        </task>
+        <task id="17" name="maquette ihm" color="#8cb6ce" meeting="false" start="2015-11-06" duration="1" complete="2" expand="true">
+            <notes><![CDATA[fini]]></notes>
+        </task>
+        <task id="19" name="charte graphique" color="#cccc00" shape="0,0,0,0,1,1,1,1,0,0,0,0,1,1,1,1" meeting="false" start="2015-11-06" duration="1" complete="3" expand="true">
+            <notes><![CDATA[terminé]]></notes>
         </task>
     </tasks>
     <resources>
@@ -59,9 +65,11 @@
     <allocations>
         <allocation task-id="5" resource-id="0" function="SoftwareDevelopment:2" responsible="true" load="100.0"/>
         <allocation task-id="12" resource-id="0" function="SoftwareDevelopment:2" responsible="false" load="100.0"/>
+        <allocation task-id="17" resource-id="0" function="SoftwareDevelopment:2" responsible="true" load="100.0"/>
         <allocation task-id="5" resource-id="1" function="Default:1" responsible="false" load="100.0"/>
         <allocation task-id="12" resource-id="1" function="Default:1" responsible="true" load="100.0"/>
         <allocation task-id="15" resource-id="1" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="19" resource-id="1" function="Default:1" responsible="true" load="100.0"/>
         <allocation task-id="0" resource-id="2" function="SoftwareDevelopment:2" responsible="true" load="100.0"/>
         <allocation task-id="2" resource-id="2" function="SoftwareDevelopment:2" responsible="true" load="100.0"/>
         <allocation task-id="12" resource-id="2" function="SoftwareDevelopment:2" responsible="false" load="100.0"/>
