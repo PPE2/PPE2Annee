@@ -80,6 +80,19 @@
                 <li>
                     <a href="#">Contact</a>
                 </li>
+				
+				   <?php
+                                                    mysql_connect("localhost", "root", "root");
+                                                    mysql_select_db("postgres");
+                                                    $req="SELECT * FROM secteur";
+                                                    $sql= mysql_query($req);      
+                                                    // Recuperer le contenu de la table
+                                                    while ($row = mysql_fetch_array($sql)) {
+                                                        echo "<li>".' value="'.$row['libellesecteur']."</li><br />";
+                                                    }
+                                                    
+                                                ?>
+				
             </ul>
         </div>
         <!-- /#sidebar-wrapper -->
