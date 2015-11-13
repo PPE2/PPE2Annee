@@ -48,8 +48,10 @@ CREATE TABLE IF NOT EXISTS bateautransport(
 	
 INSERT INTO bateautransport (nombateau, longueurbateau, largeurbateau vitessebateau) VALUES
 	('Luce isle', '37.20', '8.60', '26'),
-	('Al\' xi', '25', '7', '16');
-
+	('Al\' xi', '25', '7', '16'),
+	('Kor\' Ant', '30', '8', '20'),
+	('Ar Solen', '35', '9', '18');
+	
 CREATE TABLE IF NOT EXISTS bateaufret(
 		poidsmax INTEGER NOT NULL) INHERITS (bateau);
 
@@ -63,22 +65,22 @@ CREATE TABLE IF NOT EXISTS traversee(
 	FOREIGN KEY(nombateau) REFERENCES bateau(nombateau),
     PRIMARY KEY(idtraversee));
 
-INSERT INTO traversee(idtraversee, heuretraversee, datetraversee, idliaison, nombateau)
-	('', '05h00', '', , ,)
-	('', '06h00', '', , ,)
-	('', '07h00', '', , ,)
-	('', '08h00', '', , ,)
-	('', '09h00', '', , ,)
-	('', '10h00', '', , ,)
-	('', '11h00', '', , ,)
-	('', '12h00', '', , ,)
-	('', '13h00', '', , ,)
-	('', '14h00', '', , ,)
-	('', '', '', , ,)
-	('', '', '', , ,)
-	('', '', '', , ,)
-	('', '', '', , ,)
-	('', '', '', , ,)
+INSERT INTO traversee(idtraversee, heuretraversee, datetraversee, idliaison, nombateau) VALUES
+	('', '05h00', '2015-11-13', '15', 'Luce isle'),
+	('', '06h00', '2015-11-13', '24', 'Kor\' Ant'),
+	('', '07h00', '2015-11-13', '16', 'Al\' xi'),
+	('', '08h00', '2015-11-13', '17', 'Kor\' Ant'),
+	('', '09h00', '2015-11-13', '19', 'Luce isle'),
+	('', '10h00', '2015-11-13', '11', 'Kor\' Ant'),
+	('', '11h00', '2015-11-13', '25', 'Ar Solen'),
+	('', '12h00', '2015-11-13', '30', 'Al\' xi'),
+	('', '13h00', '2015-11-13', '21', 'Kor\' Ant'),
+	('', '14h00', '2015-11-13', '22', 'Luce isle'),
+	('', '15h00', '2015-11-13', '15', 'Ar Solen'),
+	('', '16h00', '2015-11-13', '15', 'Kor\' Ant'),
+	('', '17h00', '2015-11-13', '15', 'Al\' xi'),
+	('', '18h00', '2015-11-13', '15', 'Ar Solen'),
+	('', '19h00', '2015-11-13', '15', 'Luce isle');
 	
 	
 CREATE TABLE IF NOT EXISTS categorie(
@@ -128,3 +130,491 @@ CREATE TABLE IF NOT EXISTS tarif(
 	UNIQUE(idperiode),
 	UNIQUE(idliaison),
 	UNIQUE(codetype));
+	
+INSERT INTO tarif (idperiode, idliaison, codetype, prix) VALUES
+	(SELECT idperiode FROM periode WHERE datedebut = '2014-09-01' , '15', 'A1', '18'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-06-16' , '15', 'A1', '20'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-09-16' , '15', 'A1', '19'),
+	
+	(SELECT idperiode FROM periode WHERE datedebut = '2014-09-01' , '15', 'A2', '11.1'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-06-16' , '15', 'A2', '13.10'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-09-16' , '15', 'A2', '12.10'),
+	
+	(SELECT idperiode FROM periode WHERE datedebut = '2014-09-01' , '15', 'A3', '5.60'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-06-16' , '15', 'A3', '7'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-09-16' , '15', 'A3', '6.40'),
+	
+	(SELECT idperiode FROM periode WHERE datedebut = '2014-09-01' , '15', 'B1', '86'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-06-16' , '15', 'B1', '95'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-09-16' , '15', 'B1', '91'),
+	
+	(SELECT idperiode FROM periode WHERE datedebut = '2014-09-01' , '15', 'B2', '129'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-06-16' , '15', 'B2', '142'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-09-16' , '15', 'B2', '136'),
+	
+	(SELECT idperiode FROM periode WHERE datedebut = '2014-09-01' , '15', 'C1', '189'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-06-16' , '15', 'C1', '208'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-09-16' , '15', 'C1', '199'),
+	
+	(SELECT idperiode FROM periode WHERE datedebut = '2014-09-01' , '15', 'C2', '205'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-06-16' , '15', 'C2', '226'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-09-16' , '15', 'C2', '216'),
+	
+	(SELECT idperiode FROM periode WHERE datedebut = '2014-09-01' , '15', 'C3', '268'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-06-16' , '15', 'C3', '295'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-09-16' , '15', 'C3', '282'),
+	...
+	(SELECT idperiode FROM periode WHERE datedebut = '2014-09-01' , '', 'A1', '18'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-06-16' , '', 'A1', '20'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-09-16' , '', 'A1', '19'),
+	
+	(SELECT idperiode FROM periode WHERE datedebut = '2014-09-01' , '', 'A2', '11.1'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-06-16' , '', 'A2', '13.10'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-09-16' , '', 'A2', '12.10'),
+	
+	(SELECT idperiode FROM periode WHERE datedebut = '2014-09-01' , '', 'A3', '5.60'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-06-16' , '', 'A3', '7'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-09-16' , '', 'A3', '6.40'),
+	
+	(SELECT idperiode FROM periode WHERE datedebut = '2014-09-01' , '', 'B1', '86'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-06-16' , '', 'B1', '95'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-09-16' , '', 'B1', '91'),
+	
+	(SELECT idperiode FROM periode WHERE datedebut = '2014-09-01' , '', 'B2', '129'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-06-16' , '', 'B2', '142'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-09-16' , '', 'B2', '136'),
+	
+	(SELECT idperiode FROM periode WHERE datedebut = '2014-09-01' , '', 'C1', '189'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-06-16' , '', 'C1', '208'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-09-16' , '', 'C1', '199'),
+	
+	(SELECT idperiode FROM periode WHERE datedebut = '2014-09-01' , '', 'C2', '205'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-06-16' , '', 'C2', '226'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-09-16' , '', 'C2', '216'),
+	
+	(SELECT idperiode FROM periode WHERE datedebut = '2014-09-01' , '', 'C3', '268'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-06-16' , '', 'C3', '295'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-09-16' , '', 'C3', '282'),
+	...
+	(SELECT idperiode FROM periode WHERE datedebut = '2014-09-01' , '', 'A1', '18'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-06-16' , '', 'A1', '20'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-09-16' , '', 'A1', '19'),
+	
+	(SELECT idperiode FROM periode WHERE datedebut = '2014-09-01' , '', 'A2', '11.1'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-06-16' , '', 'A2', '13.10'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-09-16' , '', 'A2', '12.10'),
+	
+	(SELECT idperiode FROM periode WHERE datedebut = '2014-09-01' , '', 'A3', '5.60'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-06-16' , '', 'A3', '7'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-09-16' , '', 'A3', '6.40'),
+	
+	(SELECT idperiode FROM periode WHERE datedebut = '2014-09-01' , '', 'B1', '86'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-06-16' , '', 'B1', '95'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-09-16' , '', 'B1', '91'),
+	
+	(SELECT idperiode FROM periode WHERE datedebut = '2014-09-01' , '', 'B2', '129'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-06-16' , '', 'B2', '142'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-09-16' , '', 'B2', '136'),
+	
+	(SELECT idperiode FROM periode WHERE datedebut = '2014-09-01' , '', 'C1', '189'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-06-16' , '', 'C1', '208'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-09-16' , '', 'C1', '199'),
+	
+	(SELECT idperiode FROM periode WHERE datedebut = '2014-09-01' , '', 'C2', '205'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-06-16' , '', 'C2', '226'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-09-16' , '', 'C2', '216'),
+	
+	(SELECT idperiode FROM periode WHERE datedebut = '2014-09-01' , '', 'C3', '268'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-06-16' , '', 'C3', '295'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-09-16' , '', 'C3', '282'),
+	...
+	(SELECT idperiode FROM periode WHERE datedebut = '2014-09-01' , '', 'A1', '18'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-06-16' , '', 'A1', '20'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-09-16' , '', 'A1', '19'),
+	
+	(SELECT idperiode FROM periode WHERE datedebut = '2014-09-01' , '', 'A2', '11.1'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-06-16' , '', 'A2', '13.10'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-09-16' , '', 'A2', '12.10'),
+	
+	(SELECT idperiode FROM periode WHERE datedebut = '2014-09-01' , '', 'A3', '5.60'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-06-16' , '', 'A3', '7'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-09-16' , '', 'A3', '6.40'),
+	
+	(SELECT idperiode FROM periode WHERE datedebut = '2014-09-01' , '', 'B1', '86'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-06-16' , '', 'B1', '95'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-09-16' , '', 'B1', '91'),
+	
+	(SELECT idperiode FROM periode WHERE datedebut = '2014-09-01' , '', 'B2', '129'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-06-16' , '', 'B2', '142'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-09-16' , '', 'B2', '136'),
+	
+	(SELECT idperiode FROM periode WHERE datedebut = '2014-09-01' , '', 'C1', '189'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-06-16' , '', 'C1', '208'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-09-16' , '', 'C1', '199'),
+	
+	(SELECT idperiode FROM periode WHERE datedebut = '2014-09-01' , '', 'C2', '205'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-06-16' , '', 'C2', '226'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-09-16' , '', 'C2', '216'),
+	
+	(SELECT idperiode FROM periode WHERE datedebut = '2014-09-01' , '', 'C3', '268'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-06-16' , '', 'C3', '295'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-09-16' , '', 'C3', '282'),
+	...
+	(SELECT idperiode FROM periode WHERE datedebut = '2014-09-01' , '', 'A1', '18'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-06-16' , '', 'A1', '20'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-09-16' , '', 'A1', '19'),
+	
+	(SELECT idperiode FROM periode WHERE datedebut = '2014-09-01' , '', 'A2', '11.1'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-06-16' , '', 'A2', '13.10'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-09-16' , '', 'A2', '12.10'),
+	
+	(SELECT idperiode FROM periode WHERE datedebut = '2014-09-01' , '', 'A3', '5.60'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-06-16' , '', 'A3', '7'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-09-16' , '', 'A3', '6.40'),
+	
+	(SELECT idperiode FROM periode WHERE datedebut = '2014-09-01' , '', 'B1', '86'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-06-16' , '', 'B1', '95'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-09-16' , '', 'B1', '91'),
+	
+	(SELECT idperiode FROM periode WHERE datedebut = '2014-09-01' , '', 'B2', '129'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-06-16' , '', 'B2', '142'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-09-16' , '', 'B2', '136'),
+	
+	(SELECT idperiode FROM periode WHERE datedebut = '2014-09-01' , '', 'C1', '189'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-06-16' , '', 'C1', '208'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-09-16' , '', 'C1', '199'),
+	
+	(SELECT idperiode FROM periode WHERE datedebut = '2014-09-01' , '', 'C2', '205'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-06-16' , '', 'C2', '226'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-09-16' , '', 'C2', '216'),
+	
+	(SELECT idperiode FROM periode WHERE datedebut = '2014-09-01' , '', 'C3', '268'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-06-16' , '', 'C3', '295'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-09-16' , '', 'C3', '282'),
+	...
+	(SELECT idperiode FROM periode WHERE datedebut = '2014-09-01' , '', 'A1', '18'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-06-16' , '', 'A1', '20'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-09-16' , '', 'A1', '19'),
+	
+	(SELECT idperiode FROM periode WHERE datedebut = '2014-09-01' , '', 'A2', '11.1'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-06-16' , '', 'A2', '13.10'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-09-16' , '', 'A2', '12.10'),
+	
+	(SELECT idperiode FROM periode WHERE datedebut = '2014-09-01' , '', 'A3', '5.60'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-06-16' , '', 'A3', '7'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-09-16' , '', 'A3', '6.40'),
+	
+	(SELECT idperiode FROM periode WHERE datedebut = '2014-09-01' , '', 'B1', '86'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-06-16' , '', 'B1', '95'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-09-16' , '', 'B1', '91'),
+	
+	(SELECT idperiode FROM periode WHERE datedebut = '2014-09-01' , '', 'B2', '129'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-06-16' , '', 'B2', '142'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-09-16' , '', 'B2', '136'),
+	
+	(SELECT idperiode FROM periode WHERE datedebut = '2014-09-01' , '', 'C1', '189'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-06-16' , '', 'C1', '208'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-09-16' , '', 'C1', '199'),
+	
+	(SELECT idperiode FROM periode WHERE datedebut = '2014-09-01' , '', 'C2', '205'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-06-16' , '', 'C2', '226'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-09-16' , '', 'C2', '216'),
+	
+	(SELECT idperiode FROM periode WHERE datedebut = '2014-09-01' , '', 'C3', '268'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-06-16' , '', 'C3', '295'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-09-16' , '', 'C3', '282'),
+	...
+	(SELECT idperiode FROM periode WHERE datedebut = '2014-09-01' , '', 'A1', '18'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-06-16' , '', 'A1', '20'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-09-16' , '', 'A1', '19'),
+	
+	(SELECT idperiode FROM periode WHERE datedebut = '2014-09-01' , '', 'A2', '11.1'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-06-16' , '', 'A2', '13.10'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-09-16' , '', 'A2', '12.10'),
+	
+	(SELECT idperiode FROM periode WHERE datedebut = '2014-09-01' , '', 'A3', '5.60'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-06-16' , '', 'A3', '7'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-09-16' , '', 'A3', '6.40'),
+	
+	(SELECT idperiode FROM periode WHERE datedebut = '2014-09-01' , '', 'B1', '86'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-06-16' , '', 'B1', '95'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-09-16' , '', 'B1', '91'),
+	
+	(SELECT idperiode FROM periode WHERE datedebut = '2014-09-01' , '', 'B2', '129'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-06-16' , '', 'B2', '142'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-09-16' , '', 'B2', '136'),
+	
+	(SELECT idperiode FROM periode WHERE datedebut = '2014-09-01' , '', 'C1', '189'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-06-16' , '', 'C1', '208'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-09-16' , '', 'C1', '199'),
+	
+	(SELECT idperiode FROM periode WHERE datedebut = '2014-09-01' , '', 'C2', '205'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-06-16' , '', 'C2', '226'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-09-16' , '', 'C2', '216'),
+	
+	(SELECT idperiode FROM periode WHERE datedebut = '2014-09-01' , '', 'C3', '268'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-06-16' , '', 'C3', '295'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-09-16' , '', 'C3', '282'),
+	...
+	(SELECT idperiode FROM periode WHERE datedebut = '2014-09-01' , '', 'A1', '18'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-06-16' , '', 'A1', '20'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-09-16' , '', 'A1', '19'),
+	
+	(SELECT idperiode FROM periode WHERE datedebut = '2014-09-01' , '', 'A2', '11.1'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-06-16' , '', 'A2', '13.10'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-09-16' , '', 'A2', '12.10'),
+	
+	(SELECT idperiode FROM periode WHERE datedebut = '2014-09-01' , '', 'A3', '5.60'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-06-16' , '', 'A3', '7'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-09-16' , '', 'A3', '6.40'),
+	
+	(SELECT idperiode FROM periode WHERE datedebut = '2014-09-01' , '', 'B1', '86'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-06-16' , '', 'B1', '95'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-09-16' , '', 'B1', '91'),
+	
+	(SELECT idperiode FROM periode WHERE datedebut = '2014-09-01' , '', 'B2', '129'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-06-16' , '', 'B2', '142'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-09-16' , '', 'B2', '136'),
+	
+	(SELECT idperiode FROM periode WHERE datedebut = '2014-09-01' , '', 'C1', '189'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-06-16' , '', 'C1', '208'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-09-16' , '', 'C1', '199'),
+	
+	(SELECT idperiode FROM periode WHERE datedebut = '2014-09-01' , '', 'C2', '205'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-06-16' , '', 'C2', '226'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-09-16' , '', 'C2', '216'),
+	
+	(SELECT idperiode FROM periode WHERE datedebut = '2014-09-01' , '', 'C3', '268'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-06-16' , '', 'C3', '295'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-09-16' , '', 'C3', '282'),
+	...
+	(SELECT idperiode FROM periode WHERE datedebut = '2014-09-01' , '', 'A1', '18'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-06-16' , '', 'A1', '20'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-09-16' , '', 'A1', '19'),
+	
+	(SELECT idperiode FROM periode WHERE datedebut = '2014-09-01' , '', 'A2', '11.1'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-06-16' , '', 'A2', '13.10'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-09-16' , '', 'A2', '12.10'),
+	
+	(SELECT idperiode FROM periode WHERE datedebut = '2014-09-01' , '', 'A3', '5.60'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-06-16' , '', 'A3', '7'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-09-16' , '', 'A3', '6.40'),
+	
+	(SELECT idperiode FROM periode WHERE datedebut = '2014-09-01' , '', 'B1', '86'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-06-16' , '', 'B1', '95'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-09-16' , '', 'B1', '91'),
+	
+	(SELECT idperiode FROM periode WHERE datedebut = '2014-09-01' , '', 'B2', '129'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-06-16' , '', 'B2', '142'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-09-16' , '', 'B2', '136'),
+	
+	(SELECT idperiode FROM periode WHERE datedebut = '2014-09-01' , '', 'C1', '189'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-06-16' , '', 'C1', '208'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-09-16' , '', 'C1', '199'),
+	
+	(SELECT idperiode FROM periode WHERE datedebut = '2014-09-01' , '', 'C2', '205'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-06-16' , '', 'C2', '226'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-09-16' , '', 'C2', '216'),
+	
+	(SELECT idperiode FROM periode WHERE datedebut = '2014-09-01' , '', 'C3', '268'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-06-16' , '', 'C3', '295'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-09-16' , '', 'C3', '282'),
+	...
+	(SELECT idperiode FROM periode WHERE datedebut = '2014-09-01' , '', 'A1', '18'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-06-16' , '', 'A1', '20'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-09-16' , '', 'A1', '19'),
+	
+	(SELECT idperiode FROM periode WHERE datedebut = '2014-09-01' , '', 'A2', '11.1'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-06-16' , '', 'A2', '13.10'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-09-16' , '', 'A2', '12.10'),
+	
+	(SELECT idperiode FROM periode WHERE datedebut = '2014-09-01' , '', 'A3', '5.60'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-06-16' , '', 'A3', '7'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-09-16' , '', 'A3', '6.40'),
+	
+	(SELECT idperiode FROM periode WHERE datedebut = '2014-09-01' , '', 'B1', '86'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-06-16' , '', 'B1', '95'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-09-16' , '', 'B1', '91'),
+	
+	(SELECT idperiode FROM periode WHERE datedebut = '2014-09-01' , '', 'B2', '129'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-06-16' , '', 'B2', '142'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-09-16' , '', 'B2', '136'),
+	
+	(SELECT idperiode FROM periode WHERE datedebut = '2014-09-01' , '', 'C1', '189'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-06-16' , '', 'C1', '208'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-09-16' , '', 'C1', '199'),
+	
+	(SELECT idperiode FROM periode WHERE datedebut = '2014-09-01' , '', 'C2', '205'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-06-16' , '', 'C2', '226'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-09-16' , '', 'C2', '216'),
+	
+	(SELECT idperiode FROM periode WHERE datedebut = '2014-09-01' , '', 'C3', '268'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-06-16' , '', 'C3', '295'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-09-16' , '', 'C3', '282'),
+	...
+	(SELECT idperiode FROM periode WHERE datedebut = '2014-09-01' , '', 'A1', '18'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-06-16' , '', 'A1', '20'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-09-16' , '', 'A1', '19'),
+	
+	(SELECT idperiode FROM periode WHERE datedebut = '2014-09-01' , '', 'A2', '11.1'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-06-16' , '', 'A2', '13.10'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-09-16' , '', 'A2', '12.10'),
+	
+	(SELECT idperiode FROM periode WHERE datedebut = '2014-09-01' , '', 'A3', '5.60'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-06-16' , '', 'A3', '7'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-09-16' , '', 'A3', '6.40'),
+	
+	(SELECT idperiode FROM periode WHERE datedebut = '2014-09-01' , '', 'B1', '86'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-06-16' , '', 'B1', '95'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-09-16' , '', 'B1', '91'),
+	
+	(SELECT idperiode FROM periode WHERE datedebut = '2014-09-01' , '', 'B2', '129'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-06-16' , '', 'B2', '142'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-09-16' , '', 'B2', '136'),
+	
+	(SELECT idperiode FROM periode WHERE datedebut = '2014-09-01' , '', 'C1', '189'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-06-16' , '', 'C1', '208'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-09-16' , '', 'C1', '199'),
+	
+	(SELECT idperiode FROM periode WHERE datedebut = '2014-09-01' , '', 'C2', '205'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-06-16' , '', 'C2', '226'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-09-16' , '', 'C2', '216'),
+	
+	(SELECT idperiode FROM periode WHERE datedebut = '2014-09-01' , '', 'C3', '268'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-06-16' , '', 'C3', '295'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-09-16' , '', 'C3', '282'),
+	...
+	(SELECT idperiode FROM periode WHERE datedebut = '2014-09-01' , '', 'A1', '18'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-06-16' , '', 'A1', '20'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-09-16' , '', 'A1', '19'),
+	
+	(SELECT idperiode FROM periode WHERE datedebut = '2014-09-01' , '', 'A2', '11.1'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-06-16' , '', 'A2', '13.10'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-09-16' , '', 'A2', '12.10'),
+	
+	(SELECT idperiode FROM periode WHERE datedebut = '2014-09-01' , '', 'A3', '5.60'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-06-16' , '', 'A3', '7'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-09-16' , '', 'A3', '6.40'),
+	
+	(SELECT idperiode FROM periode WHERE datedebut = '2014-09-01' , '', 'B1', '86'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-06-16' , '', 'B1', '95'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-09-16' , '', 'B1', '91'),
+	
+	(SELECT idperiode FROM periode WHERE datedebut = '2014-09-01' , '', 'B2', '129'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-06-16' , '', 'B2', '142'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-09-16' , '', 'B2', '136'),
+	
+	(SELECT idperiode FROM periode WHERE datedebut = '2014-09-01' , '', 'C1', '189'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-06-16' , '', 'C1', '208'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-09-16' , '', 'C1', '199'),
+	
+	(SELECT idperiode FROM periode WHERE datedebut = '2014-09-01' , '', 'C2', '205'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-06-16' , '', 'C2', '226'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-09-16' , '', 'C2', '216'),
+	
+	(SELECT idperiode FROM periode WHERE datedebut = '2014-09-01' , '', 'C3', '268'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-06-16' , '', 'C3', '295'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-09-16' , '', 'C3', '282'),
+	...
+	(SELECT idperiode FROM periode WHERE datedebut = '2014-09-01' , '', 'A1', '18'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-06-16' , '', 'A1', '20'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-09-16' , '', 'A1', '19'),
+	
+	(SELECT idperiode FROM periode WHERE datedebut = '2014-09-01' , '', 'A2', '11.1'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-06-16' , '', 'A2', '13.10'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-09-16' , '', 'A2', '12.10'),
+	
+	(SELECT idperiode FROM periode WHERE datedebut = '2014-09-01' , '', 'A3', '5.60'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-06-16' , '', 'A3', '7'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-09-16' , '', 'A3', '6.40'),
+	
+	(SELECT idperiode FROM periode WHERE datedebut = '2014-09-01' , '', 'B1', '86'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-06-16' , '', 'B1', '95'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-09-16' , '', 'B1', '91'),
+	
+	(SELECT idperiode FROM periode WHERE datedebut = '2014-09-01' , '', 'B2', '129'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-06-16' , '', 'B2', '142'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-09-16' , '', 'B2', '136'),
+	
+	(SELECT idperiode FROM periode WHERE datedebut = '2014-09-01' , '', 'C1', '189'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-06-16' , '', 'C1', '208'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-09-16' , '', 'C1', '199'),
+	
+	(SELECT idperiode FROM periode WHERE datedebut = '2014-09-01' , '', 'C2', '205'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-06-16' , '', 'C2', '226'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-09-16' , '', 'C2', '216'),
+	
+	(SELECT idperiode FROM periode WHERE datedebut = '2014-09-01' , '', 'C3', '268'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-06-16' , '', 'C3', '295'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-09-16' , '', 'C3', '282'),
+	...
+	(SELECT idperiode FROM periode WHERE datedebut = '2014-09-01' , '', 'A1', '18'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-06-16' , '', 'A1', '20'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-09-16' , '', 'A1', '19'),
+	
+	(SELECT idperiode FROM periode WHERE datedebut = '2014-09-01' , '', 'A2', '11.1'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-06-16' , '', 'A2', '13.10'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-09-16' , '', 'A2', '12.10'),
+	
+	(SELECT idperiode FROM periode WHERE datedebut = '2014-09-01' , '', 'A3', '5.60'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-06-16' , '', 'A3', '7'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-09-16' , '', 'A3', '6.40'),
+	
+	(SELECT idperiode FROM periode WHERE datedebut = '2014-09-01' , '', 'B1', '86'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-06-16' , '', 'B1', '95'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-09-16' , '', 'B1', '91'),
+	
+	(SELECT idperiode FROM periode WHERE datedebut = '2014-09-01' , '', 'B2', '129'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-06-16' , '', 'B2', '142'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-09-16' , '', 'B2', '136'),
+	
+	(SELECT idperiode FROM periode WHERE datedebut = '2014-09-01' , '', 'C1', '189'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-06-16' , '', 'C1', '208'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-09-16' , '', 'C1', '199'),
+	
+	(SELECT idperiode FROM periode WHERE datedebut = '2014-09-01' , '', 'C2', '205'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-06-16' , '', 'C2', '226'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-09-16' , '', 'C2', '216'),
+	
+	(SELECT idperiode FROM periode WHERE datedebut = '2014-09-01' , '', 'C3', '268'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-06-16' , '', 'C3', '295'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-09-16' , '', 'C3', '282'),
+	...
+	(SELECT idperiode FROM periode WHERE datedebut = '2014-09-01' , '', 'A1', '18'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-06-16' , '', 'A1', '20'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-09-16' , '', 'A1', '19'),
+	
+	(SELECT idperiode FROM periode WHERE datedebut = '2014-09-01' , '', 'A2', '11.1'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-06-16' , '', 'A2', '13.10'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-09-16' , '', 'A2', '12.10'),
+	
+	(SELECT idperiode FROM periode WHERE datedebut = '2014-09-01' , '', 'A3', '5.60'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-06-16' , '', 'A3', '7'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-09-16' , '', 'A3', '6.40'),
+	
+	(SELECT idperiode FROM periode WHERE datedebut = '2014-09-01' , '', 'B1', '86'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-06-16' , '', 'B1', '95'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-09-16' , '', 'B1', '91'),
+	
+	(SELECT idperiode FROM periode WHERE datedebut = '2014-09-01' , '', 'B2', '129'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-06-16' , '', 'B2', '142'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-09-16' , '', 'B2', '136'),
+	
+	(SELECT idperiode FROM periode WHERE datedebut = '2014-09-01' , '', 'C1', '189'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-06-16' , '', 'C1', '208'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-09-16' , '', 'C1', '199'),
+	
+	(SELECT idperiode FROM periode WHERE datedebut = '2014-09-01' , '', 'C2', '205'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-06-16' , '', 'C2', '226'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-09-16' , '', 'C2', '216'),
+	
+	(SELECT idperiode FROM periode WHERE datedebut = '2014-09-01' , '', 'C3', '268'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-06-16' , '', 'C3', '295'),
+	(SELECT idperiode FROM periode WHERE datedebut = '2015-09-16' , '', 'C3', '282');
+	...
+
+
+
+
+
+
