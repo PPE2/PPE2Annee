@@ -9,8 +9,8 @@ CREATE TABLE IF NOT EXISTS liaison(
         distmiles INTEGER NOT NULL,
 	portdepart varchar(100) NOT NULL,
 	portarrivee varchar(100) NOT NULL,
-	idsecteur INTEGER NOT NULL,
-	FOREIGN KEY(idsecteur) REFERENCES secteur(idsecteur),
+	libellesecteur varchar(100) NOT NULL,
+	FOREIGN KEY(libellesecteur) REFERENCES secteur(libellesecteur),
         PRIMARY KEY(idliaison));
 
 CREATE TABLE IF NOT EXISTS bateau(		
@@ -30,9 +30,9 @@ CREATE TABLE IF NOT EXISTS traversee(
         heuretraversee DATE NOT NULL,
 	datetraversee DATE NOT NULL,
 	portarrivee varchar(100) NOT NULL,
-	idliaison INTEGER NOT NULL,
+	libelleliaison varchar(100) NOT NULL,
 	nombateau varchar(100) NOT NULL,
-	FOREIGN KEY(idliaison) REFERENCES liaison(idliaison),
+	FOREIGN KEY(libelleliaison) REFERENCES liaison(libelleliaison),
 	FOREIGN KEY(nombateau) REFERENCES bateau(nombateau),
         PRIMARY KEY(idtraversee));
 
@@ -53,13 +53,13 @@ CREATE TABLE IF NOT EXISTS periode(
 	PRIMARY KEY(idperiode));
 
 CREATE TABLE IF NOT EXISTS tarif(
-	idperiode INTEGER NOT NULL, 
-	idliaison INTEGER NOT NULL, 
+	libelleperiode varchar(100) NOT NULL, 
+	libelleliaison varchar(100) NOT NULL, 
 	codetype varchar(100) NOT NULL,
 	prix INTEGER NOT NULL, 
-	FOREIGN KEY(idperiode) REFERENCES periode(idperiode),
-	FOREIGN KEY(idliaison) REFERENCES liaison(idliaison),
+	FOREIGN KEY(libelleperiode) REFERENCES periode(libelleperiode),
+	FOREIGN KEY(libelleliaison) REFERENCES liaison(libelleliaison),
 	FOREIGN KEY(codetype) REFERENCES typee(codetype),
-	UNIQUE(idperiode),
-	UNIQUE(idliaison),
+	UNIQUE(libelleperiode),
+	UNIQUE(libelleliaison),
 	UNIQUE(codetype));
