@@ -1,4 +1,7 @@
-﻿CREATE TABLE IF NOT EXISTS secteur(
+﻿CREATE DATABASE marieteam DEFAULT CHARACTER SET latin1 COLLATE latin1_general_ci;
+USE `marieteam`;
+
+CREATE TABLE IF NOT EXISTS secteur(
         idsecteur SERIAL, 
         libellesecteur varchar(100) NOT NULL,
         PRIMARY KEY(idsecteur));
