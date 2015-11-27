@@ -1,5 +1,8 @@
-﻿/*CREATE TABLE IF NOT EXISTS secteur(
-        idsecteur SERIAL, 
+﻿CREATE DATABASE IF NOT EXISTS marieteam DEFAULT CHARACTER SET latin1 COLLATE latin1_general_ci;
+USE `marieteam`;
+
+CREATE TABLE IF NOT EXISTS secteur(
+        idsecteur int NOT NULL AUTO_INCREMENT, 
         libellesecteur varchar(100) NOT NULL,
         PRIMARY KEY(idsecteur));
  
@@ -16,14 +19,15 @@ INSERT INTO secteur (libellesecteur) VALUES
 	('Yeu');
 
 CREATE TABLE IF NOT EXISTS liaison(
-    idliaison INTEGER NOT NULL, 
+    idliaison INTEGER NOT NULL AUTO_INCREMENT, 
     distmiles INTEGER NOT NULL,
 	portdepart varchar(100) NOT NULL,
 	portarrivee varchar(100) NOT NULL,
 	idsecteur INTEGER NOT NULL,
 	FOREIGN KEY(idsecteur) REFERENCES secteur(idsecteur),
     PRIMARY KEY(idliaison));
-		
+	ENGINE=InnoDB DEFAULT CHARSET-latin1 AUTO_INCREMENT=1;
+	
 INSERT INTO liaison (distmiles, portdepart, portarrivee, idsecteur) VALUES
 	('8.3', 'Quiberon', 'le Palais', (SELECT idsecteur FROM secteur WHERE libellesecteur = 'Belle-Ile-en-Mer')),
 	('9', 'Le Palais', 'Quiberon', (SELECT idsecteur FROM secteur WHERE libellesecteur = 'Belle-Ile-en-Mer')),
@@ -56,7 +60,7 @@ CREATE TABLE IF NOT EXISTS bateaufret(
 		poidsmax INTEGER NOT NULL) INHERITS (bateau);
 
 CREATE TABLE IF NOT EXISTS traversee(
-	idtraversee SERIAL, 
+	idtraversee int NOT NULL AUTO_INCREMENT, 
 	heuretraversee DATE NOT NULL,
 	datetraversee DATE NOT NULL,
 	idliaison INTEGER NOT NULL,
@@ -65,7 +69,7 @@ CREATE TABLE IF NOT EXISTS traversee(
 	FOREIGN KEY(nombateau) REFERENCES bateau(nombateau),
 	PRIMARY KEY(idtraversee));
 
-*/
+
 INSERT INTO traversee( heuretraversee, datetraversee, idliaison, nombateau) VALUES
 	( '05:00', '2015-11-13', '81', 'Luce isle'),
 	( '06:00', '2015-11-13', '82', 'Kor'' Ant'),
@@ -105,7 +109,7 @@ INSERT INTO typee (codetype, libelletype) VALUES
 	('C3', 'Camion');
 	
 CREATE TABLE IF NOT EXISTS periode(
-	idperiode SERIAL, 
+	idperiode int NOT NULL AUTO_INCREMENT, 
 	datedebut date NOT NULL,
 	datefin date NOT NULL,
 	PRIMARY KEY(idperiode));
