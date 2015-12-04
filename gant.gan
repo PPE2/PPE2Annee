@@ -8,8 +8,8 @@
         <option id="color.recent"><![CDATA[#cc6600 #6666ff #cccc00 #ff0000 #3399ff #9900ff #f4f4f4]]></option>
     </view>
     <view id="resource-table">
-        <field id="0" name="Nom" width="52" order="0"/>
-        <field id="1" name="Rôle par défaut" width="47" order="1"/>
+        <field id="0" name="Nom" width="50" order="0"/>
+        <field id="1" name="Rôle par défaut" width="49" order="1"/>
     </view>
     <!-- -->
     <calendars>
