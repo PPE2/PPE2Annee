@@ -148,319 +148,558 @@ CREATE TABLE IF NOT EXISTS `tarif`(
 	FOREIGN KEY(codetype) REFERENCES typee(codetype),
     PRIMARY KEY(idperiode, idliaison, codetype));
 	
-INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`) VALUES
-	('SELECT idperiode FROM periode WHERE datedebut = "2014-09-01"', '15', 'A1', '18'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-06-16"' , '15', 'A1', '20'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-09-16"' , '15', 'A1', '19'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2014-09-01"', '15', 'A2', '11.1'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-06-16"' , '15', 'A2', '13.10'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-09-16"' , '15', 'A2', '12.10'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2014-09-01"', '15', 'A3', '5.60'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-06-16"' , '15', 'A3', '7'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-09-16"' , '15', 'A3', '6.40'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2014-09-01"', '15', 'B1', '86'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-06-16"' , '15', 'B1', '95'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-09-16"' , '15', 'B1', '91'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2014-09-01"', '15', 'B2', '129'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-06-16"' , '15', 'B2', '142'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-09-16"' , '15', 'B2', '136'),
+INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '15', 'A1', '18' FROM periode WHERE datedebut = "2014-09-01");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '15', 'A1', '20' FROM periode WHERE datedebut = "2015-06-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '15', 'A1', '19' FROM periode WHERE datedebut = "2015-09-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '15', 'A2', '11.1' FROM periode WHERE datedebut = "2014-09-01");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '15', 'A2', '13.10' FROM periode WHERE datedebut = "2015-06-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '15', 'A2', '12.10' FROM periode WHERE datedebut = "2015-09-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '15', 'A3', '5.60' FROM periode WHERE datedebut = "2014-09-01");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '15', 'A3', '7' FROM periode WHERE datedebut = "2015-06-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '15', 'A3', '6.40' FROM periode WHERE datedebut = "2015-09-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '15', 'B1', '86' FROM periode WHERE datedebut = "2014-09-01");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '15', 'B1', '95' FROM periode WHERE datedebut = "2015-06-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '15', 'B1', '91' FROM periode WHERE datedebut = "2015-09-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '15', 'B2', '129' FROM periode WHERE datedebut = "2014-09-01");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '15', 'B2', '142' FROM periode WHERE datedebut = "2015-06-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '15', 'B2', '136' FROM periode WHERE datedebut = "2015-09-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
 	
-	('SELECT idperiode FROM periode WHERE datedebut = "2014-09-01"', '15', 'C1', '189'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-06-16"' , '15', 'C1', '208'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-09-16"' , '15', 'C1', '199'),
+	(SELECT idperiode , '15', 'C1', '189' FROM periode WHERE datedebut = "2014-09-01");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '15', 'C1', '208' FROM periode WHERE datedebut = "2015-06-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '15', 'C1', '199' FROM periode WHERE datedebut = "2015-09-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
 	
-	('SELECT idperiode FROM periode WHERE datedebut = "2014-09-01"', '15', 'C2', '205'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-06-16"' , '15', 'C2', '226'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-09-16"' , '15', 'C2', '216'),
+	(SELECT idperiode , '15', 'C2', '205' FROM periode WHERE datedebut = "2014-09-01");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '15', 'C2', '226' FROM periode WHERE datedebut = "2015-06-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '15', 'C2', '216' FROM periode WHERE datedebut = "2015-09-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
 	
-	('SELECT idperiode FROM periode WHERE datedebut = "2014-09-01"', '15', 'C3', '268'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-06-16"' , '15', 'C3', '295'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-09-16"' , '15', 'C3', '282'),
+	(SELECT idperiode , '15', 'C3', '268' FROM periode WHERE datedebut = "2014-09-01");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '15', 'C3', '295' FROM periode WHERE datedebut = "2015-06-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '15', 'C3', '282' FROM periode WHERE datedebut = "2015-09-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
 
-	('SELECT idperiode FROM periode WHERE datedebut = "2014-09-01"', '16', 'A1', '18'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-06-16"' , '16', 'A1', '20'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-09-16"' , '16', 'A1', '19'),
+	(SELECT idperiode , '16', 'A1', '18' FROM periode WHERE datedebut = "2014-09-01");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '16', 'A1', '20' FROM periode WHERE datedebut = "2015-06-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '16', 'A1', '19' FROM periode WHERE datedebut = "2015-09-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
 	
-	('SELECT idperiode FROM periode WHERE datedebut = "2014-09-01"', '16', 'A2', '11.1'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-06-16"' , '16', 'A2', '13.10'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-09-16"' , '16', 'A2', '12.10'),
+	(SELECT idperiode , '16', 'A2', '11.1' FROM periode WHERE datedebut = "2014-09-01");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '16', 'A2', '13.10' FROM periode WHERE datedebut = "2015-06-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '16', 'A2', '12.10' FROM periode WHERE datedebut = "2015-09-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
 	
-	('SELECT idperiode FROM periode WHERE datedebut = "2014-09-01"', '16', 'A3', '5.60'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-06-16"' , '16', 'A3', '7'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-09-16"' , '16', 'A3', '6.40'),
+	(SELECT idperiode , '16', 'A3', '5.60' FROM periode WHERE datedebut = "2014-09-01");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '16', 'A3', '7' FROM periode WHERE datedebut = "2015-06-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '16', 'A3', '6.40' FROM periode WHERE datedebut = "2015-09-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
 	
-	('SELECT idperiode FROM periode WHERE datedebut = "2014-09-01"', '16', 'B1', '86'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-06-16"' , '16', 'B1', '95'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-09-16"' , '16', 'B1', '91'),
+	(SELECT idperiode , '16', 'B1', '86' FROM periode WHERE datedebut = "2014-09-01");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '16', 'B1', '95' FROM periode WHERE datedebut = "2015-06-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '16', 'B1', '91' FROM periode WHERE datedebut = "2015-09-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
 	
-	('SELECT idperiode FROM periode WHERE datedebut = "2014-09-01"', '16', 'B2', '129'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-06-16"' , '16', 'B2', '142'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-09-16"' , '16', 'B2', '136'),
+	(SELECT idperiode , '16', 'B2', '129' FROM periode WHERE datedebut = "2014-09-01");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '16', 'B2', '142' FROM periode WHERE datedebut = "2015-06-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '16', 'B2', '136' FROM periode WHERE datedebut = "2015-09-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
 	
-	('SELECT idperiode FROM periode WHERE datedebut = "2014-09-01"', '16', 'C1', '189'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-06-16"' , '16', 'C1', '208'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-09-16"' , '16', 'C1', '199'),
+	(SELECT idperiode , '16', 'C1', '189' FROM periode WHERE datedebut = "2014-09-01");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '16', 'C1', '208' FROM periode WHERE datedebut = "2015-06-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '16', 'C1', '199' FROM periode WHERE datedebut = "2015-09-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
 	
-	('SELECT idperiode FROM periode WHERE datedebut = "2014-09-01"', '16', 'C2', '205'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-06-16"' , '16', 'C2', '226'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-09-16"' , '16', 'C2', '216'),
+	(SELECT idperiode , '16', 'C2', '205' FROM periode WHERE datedebut = "2014-09-01");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '16', 'C2', '226' FROM periode WHERE datedebut = "2015-06-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '16', 'C2', '216' FROM periode WHERE datedebut = "2015-09-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
 	
-	('SELECT idperiode FROM periode WHERE datedebut = "2014-09-01"', '16', 'C3', '268'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-06-16"' , '16', 'C3', '295'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-09-16"' , '16', 'C3', '282'),
+	(SELECT idperiode , '16', 'C3', '268' FROM periode WHERE datedebut = "2014-09-01");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '16', 'C3', '295' FROM periode WHERE datedebut = "2015-06-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '16', 'C3', '282' FROM periode WHERE datedebut = "2015-09-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
 
-	('SELECT idperiode FROM periode WHERE datedebut = "2014-09-01"', '17', 'A1', '18'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-06-16"' , '17', 'A1', '20'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-09-16"' , '17', 'A1', '19'),
+	(SELECT idperiode , '17', 'A1', '18' FROM periode WHERE datedebut = "2014-09-01");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '17', 'A1', '20' FROM periode WHERE datedebut = "2015-06-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '17', 'A1', '19' FROM periode WHERE datedebut = "2015-09-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
 	
-	('SELECT idperiode FROM periode WHERE datedebut = "2014-09-01"', '17', 'A2', '11.1'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-06-16"' , '17', 'A2', '13.10'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-09-16"' , '17', 'A2', '12.10'),
+	(SELECT idperiode , '17', 'A2', '11.1' FROM periode WHERE datedebut = "2014-09-01");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '17', 'A2', '13.10' FROM periode WHERE datedebut = "2015-06-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '17', 'A2', '12.10' FROM periode WHERE datedebut = "2015-09-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
 	
-	('SELECT idperiode FROM periode WHERE datedebut = "2014-09-01"', '17', 'A3', '5.60'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-06-16"' , '17', 'A3', '7'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-09-16"' , '17', 'A3', '6.40'),
+	(SELECT idperiode , '17', 'A3', '5.60' FROM periode WHERE datedebut = "2014-09-01");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '17', 'A3', '7' FROM periode WHERE datedebut = "2015-06-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '17', 'A3', '6.40' FROM periode WHERE datedebut = "2015-09-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
 	
-	('SELECT idperiode FROM periode WHERE datedebut = "2014-09-01"', '17', 'B1', '86'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-06-16"' , '17', 'B1', '95'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-09-16"' , '17', 'B1', '91'),
+	(SELECT idperiode , '17', 'B1', '86' FROM periode WHERE datedebut = "2014-09-01");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '17', 'B1', '95' FROM periode WHERE datedebut = "2015-06-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '17', 'B1', '91' FROM periode WHERE datedebut = "2015-09-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
 	
-	('SELECT idperiode FROM periode WHERE datedebut = "2014-09-01"', '17', 'B2', '129'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-06-16"' , '17', 'B2', '142'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-09-16"' , '17', 'B2', '136'),
+	(SELECT idperiode , '17', 'B2', '129' FROM periode WHERE datedebut = "2014-09-01");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '17', 'B2', '142' FROM periode WHERE datedebut = "2015-06-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '17', 'B2', '136' FROM periode WHERE datedebut = "2015-09-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
 	
-	('SELECT idperiode FROM periode WHERE datedebut = "2014-09-01"', '17', 'C1', '189'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-06-16"' , '17', 'C1', '208'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-09-16"' , '17', 'C1', '199'),
+	(SELECT idperiode , '17', 'C1', '189' FROM periode WHERE datedebut = "2014-09-01");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '17', 'C1', '208' FROM periode WHERE datedebut = "2015-06-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '17', 'C1', '199' FROM periode WHERE datedebut = "2015-09-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
 	
-	('SELECT idperiode FROM periode WHERE datedebut = "2014-09-01"', '17', 'C2', '205'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-06-16"' , '17', 'C2', '226'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-09-16"' , '17', 'C2', '216'),
+	(SELECT idperiode , '17', 'C2', '205' FROM periode WHERE datedebut = "2014-09-01");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '17', 'C2', '226' FROM periode WHERE datedebut = "2015-06-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '17', 'C2', '216' FROM periode WHERE datedebut = "2015-09-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
 	
-	('SELECT idperiode FROM periode WHERE datedebut = "2014-09-01"', '17', 'C3', '268'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-06-16"' , '17', 'C3', '295'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-09-16"' , '17', 'C3', '282'),
+	(SELECT idperiode , '17', 'C3', '268' FROM periode WHERE datedebut = "2014-09-01");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '17', 'C3', '295' FROM periode WHERE datedebut = "2015-06-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '17', 'C3', '282' FROM periode WHERE datedebut = "2015-09-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
 
-	('SELECT idperiode FROM periode WHERE datedebut = "2014-09-01"', '19', 'A1', '18'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-06-16"' , '19', 'A1', '20'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-09-16"' , '19', 'A1', '19'),
+	(SELECT idperiode , '19', 'A1', '18' FROM periode WHERE datedebut = "2014-09-01");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '19', 'A1', '20' FROM periode WHERE datedebut = "2015-06-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '19', 'A1', '19' FROM periode WHERE datedebut = "2015-09-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
 	
-	('SELECT idperiode FROM periode WHERE datedebut = "2014-09-01"', '19', 'A2', '11.1'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-06-16"' , '19', 'A2', '13.10'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-09-16"' , '19', 'A2', '12.10'),
+	(SELECT idperiode , '19', 'A2', '11.1' FROM periode WHERE datedebut = "2014-09-01");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '19', 'A2', '13.10' FROM periode WHERE datedebut = "2015-06-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '19', 'A2', '12.10' FROM periode WHERE datedebut = "2015-09-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
 	
-	('SELECT idperiode FROM periode WHERE datedebut = "2014-09-01"', '19', 'A3', '5.60'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-06-16"' , '19', 'A3', '7'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-09-16"' , '19', 'A3', '6.40'),
+	(SELECT idperiode , '19', 'A3', '5.60' FROM periode WHERE datedebut = "2014-09-01");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '19', 'A3', '7' FROM periode WHERE datedebut = "2015-06-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '19', 'A3', '6.40' FROM periode WHERE datedebut = "2015-09-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
 	
-	('SELECT idperiode FROM periode WHERE datedebut = "2014-09-01"', '19', 'B1', '86'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-06-16"' , '19', 'B1', '95'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-09-16"' , '19', 'B1', '91'),
+	(SELECT idperiode , '19', 'B1', '86' FROM periode WHERE datedebut = "2014-09-01");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '19', 'B1', '95' FROM periode WHERE datedebut = "2015-06-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '19', 'B1', '91' FROM periode WHERE datedebut = "2015-09-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
 	
-	('SELECT idperiode FROM periode WHERE datedebut = "2014-09-01"', '19', 'B2', '129'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-06-16"' , '19', 'B2', '142'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-09-16"' , '19', 'B2', '136'),
+	(SELECT idperiode , '19', 'B2', '129' FROM periode WHERE datedebut = "2014-09-01");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '19', 'B2', '142' FROM periode WHERE datedebut = "2015-06-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '19', 'B2', '136' FROM periode WHERE datedebut = "2015-09-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
 	
-	('SELECT idperiode FROM periode WHERE datedebut = "2014-09-01"', '19', 'C1', '189'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-06-16"' , '19', 'C1', '208'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-09-16"' , '19', 'C1', '199'),
+	(SELECT idperiode , '19', 'C1', '189' FROM periode WHERE datedebut = "2014-09-01");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '19', 'C1', '208' FROM periode WHERE datedebut = "2015-06-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '19', 'C1', '199' FROM periode WHERE datedebut = "2015-09-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
 	
-	('SELECT idperiode FROM periode WHERE datedebut = "2014-09-01"', '19', 'C2', '205'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-06-16"' , '19', 'C2', '226'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-09-16"' , '19', 'C2', '216'),
+	(SELECT idperiode , '19', 'C2', '205' FROM periode WHERE datedebut = "2014-09-01");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '19', 'C2', '226' FROM periode WHERE datedebut = "2015-06-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '19', 'C2', '216' FROM periode WHERE datedebut = "2015-09-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
 	
-	('SELECT idperiode FROM periode WHERE datedebut = "2014-09-01"', '19', 'C3', '268'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-06-16"' , '19', 'C3', '295'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-09-16"' , '19', 'C3', '282'),
+	(SELECT idperiode , '19', 'C3', '268' FROM periode WHERE datedebut = "2014-09-01");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '19', 'C3', '295' FROM periode WHERE datedebut = "2015-06-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '19', 'C3', '282' FROM periode WHERE datedebut = "2015-09-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
 
-	('SELECT idperiode FROM periode WHERE datedebut = "2014-09-01"', '21', 'A1', '18'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-06-16"' , '21', 'A1', '20'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-09-16"' , '21', 'A1', '19'),
+	(SELECT idperiode , '21', 'A1', '18' FROM periode WHERE datedebut = "2014-09-01");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '21', 'A1', '20' FROM periode WHERE datedebut = "2015-06-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '21', 'A1', '19' FROM periode WHERE datedebut = "2015-09-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
 	
-	('SELECT idperiode FROM periode WHERE datedebut = "2014-09-01"', '21', 'A2', '11.1'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-06-16"' , '21', 'A2', '13.10'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-09-16"' , '21', 'A2', '12.10'),
+	(SELECT idperiode , '21', 'A2', '11.1' FROM periode WHERE datedebut = "2014-09-01");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '21', 'A2', '13.10' FROM periode WHERE datedebut = "2015-06-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '21', 'A2', '12.10' FROM periode WHERE datedebut = "2015-09-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
 	
-	('SELECT idperiode FROM periode WHERE datedebut = "2014-09-01"', '21', 'A3', '5.60'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-06-16"' , '21', 'A3', '7'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-09-16"' , '21', 'A3', '6.40'),
+	(SELECT idperiode , '21', 'A3', '5.60' FROM periode WHERE datedebut = "2014-09-01");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '21', 'A3', '7' FROM periode WHERE datedebut = "2015-06-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '21', 'A3', '6.40' FROM periode WHERE datedebut = "2015-09-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
 	
-	('SELECT idperiode FROM periode WHERE datedebut = "2014-09-01"', '21', 'B1', '86'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-06-16"' , '21', 'B1', '95'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-09-16"' , '21', 'B1', '91'),
+	(SELECT idperiode , '21', 'B1', '86' FROM periode WHERE datedebut = "2014-09-01");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '21', 'B1', '95' FROM periode WHERE datedebut = "2015-06-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '21', 'B1', '91' FROM periode WHERE datedebut = "2015-09-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
 	
-	('SELECT idperiode FROM periode WHERE datedebut = "2014-09-01"', '21', 'B2', '129'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-06-16"' , '21', 'B2', '142'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-09-16"' , '21', 'B2', '136'),
+	(SELECT idperiode , '21', 'B2', '129' FROM periode WHERE datedebut = "2014-09-01");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '21', 'B2', '142' FROM periode WHERE datedebut = "2015-06-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '21', 'B2', '136' FROM periode WHERE datedebut = "2015-09-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
 	
-	('SELECT idperiode FROM periode WHERE datedebut = "2014-09-01"', '21', 'C1', '189'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-06-16"' , '21', 'C1', '208'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-09-16"' , '21', 'C1', '199'),
+	(SELECT idperiode , '21', 'C1', '189' FROM periode WHERE datedebut = "2014-09-01");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '21', 'C1', '208' FROM periode WHERE datedebut = "2015-06-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '21', 'C1', '199' FROM periode WHERE datedebut = "2015-09-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
 	
-	('SELECT idperiode FROM periode WHERE datedebut = "2014-09-01"', '21', 'C2', '205'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-06-16"' , '21', 'C2', '226'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-09-16"' , '21', 'C2', '216'),
+	(SELECT idperiode , '21', 'C2', '205' FROM periode WHERE datedebut = "2014-09-01");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '21', 'C2', '226' FROM periode WHERE datedebut = "2015-06-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '21', 'C2', '216' FROM periode WHERE datedebut = "2015-09-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
 	
-	('SELECT idperiode FROM periode WHERE datedebut = "2014-09-01"', '21', 'C3', '268'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-06-16"' , '21', 'C3', '295'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-09-16"' , '21', 'C3', '282'),
+	(SELECT idperiode , '21', 'C3', '268' FROM periode WHERE datedebut = "2014-09-01");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '21', 'C3', '295' FROM periode WHERE datedebut = "2015-06-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '21', 'C3', '282' FROM periode WHERE datedebut = "2015-09-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
 
-	('SELECT idperiode FROM periode WHERE datedebut = "2014-09-01"', '22', 'A1', '18'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-06-16"' , '22', 'A1', '20'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-09-16"' , '22', 'A1', '19'),
+	(SELECT idperiode , '22', 'A1', '18' FROM periode WHERE datedebut = "2014-09-01");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '22', 'A1', '20' FROM periode WHERE datedebut = "2015-06-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '22', 'A1', '19' FROM periode WHERE datedebut = "2015-09-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
 	
-	('SELECT idperiode FROM periode WHERE datedebut = "2014-09-01"', '22', 'A2', '11.1'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-06-16"' , '22', 'A2', '13.10'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-09-16"' , '22', 'A2', '12.10'),
+	(SELECT idperiode , '22', 'A2', '11.1' FROM periode WHERE datedebut = "2014-09-01");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '22', 'A2', '13.10' FROM periode WHERE datedebut = "2015-06-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '22', 'A2', '12.10' FROM periode WHERE datedebut = "2015-09-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
 	
-	('SELECT idperiode FROM periode WHERE datedebut = "2014-09-01"', '22', 'A3', '5.60'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-06-16"' , '22', 'A3', '7'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-09-16"' , '22', 'A3', '6.40'),
+	(SELECT idperiode , '22', 'A3', '5.60' FROM periode WHERE datedebut = "2014-09-01");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '22', 'A3', '7' FROM periode WHERE datedebut = "2015-06-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '22', 'A3', '6.40' FROM periode WHERE datedebut = "2015-09-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
 	
-	('SELECT idperiode FROM periode WHERE datedebut = "2014-09-01"', '22', 'B1', '86'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-06-16"' , '22', 'B1', '95'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-09-16"' , '22', 'B1', '91'),
+	(SELECT idperiode , '22', 'B1', '86' FROM periode WHERE datedebut = "2014-09-01");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '22', 'B1', '95' FROM periode WHERE datedebut = "2015-06-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '22', 'B1', '91' FROM periode WHERE datedebut = "2015-09-16");
+	INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
 	
-	('SELECT idperiode FROM periode WHERE datedebut = "2014-09-01"', '22', 'B2', '129'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-06-16"' , '22', 'B2', '142'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-09-16"' , '22', 'B2', '136'),
+	(SELECT idperiode , '22', 'B2', '129' FROM periode WHERE datedebut = "2014-09-01");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '22', 'B2', '142' FROM periode WHERE datedebut = "2015-06-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '22', 'B2', '136' FROM periode WHERE datedebut = "2015-09-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
 	
-	('SELECT idperiode FROM periode WHERE datedebut = "2014-09-01"', '22', 'C1', '189'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-06-16"' , '22', 'C1', '208'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-09-16"' , '22', 'C1', '199'),
+	(SELECT idperiode , '22', 'C1', '189' FROM periode WHERE datedebut = "2014-09-01");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '22', 'C1', '208' FROM periode WHERE datedebut = "2015-06-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '22', 'C1', '199' FROM periode WHERE datedebut = "2015-09-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
 	
-	('SELECT idperiode FROM periode WHERE datedebut = "2014-09-01"', '22', 'C2', '205'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-06-16"' , '22', 'C2', '226'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-09-16"' , '22', 'C2', '216'),
+	(SELECT idperiode , '22', 'C2', '205' FROM periode WHERE datedebut = "2014-09-01");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '22', 'C2', '226' FROM periode WHERE datedebut = "2015-06-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '22', 'C2', '216' FROM periode WHERE datedebut = "2015-09-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
 	
-	('SELECT idperiode FROM periode WHERE datedebut = "2014-09-01"', '22', 'C3', '268'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-06-16"' , '22', 'C3', '295'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-09-16"' , '22', 'C3', '282'),
+	(SELECT idperiode , '22', 'C3', '268' FROM periode WHERE datedebut = "2014-09-01");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '22', 'C3', '295' FROM periode WHERE datedebut = "2015-06-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '22', 'C3', '282' FROM periode WHERE datedebut = "2015-09-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
 
-	('SELECT idperiode FROM periode WHERE datedebut = "2014-09-01"', '24', 'A1', '18'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-06-16"' , '24', 'A1', '20'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-09-16"' , '24', 'A1', '19'),
+	(SELECT idperiode , '24', 'A1', '18' FROM periode WHERE datedebut = "2014-09-01");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '24', 'A1', '20' FROM periode WHERE datedebut = "2015-06-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '24', 'A1', '19' FROM periode WHERE datedebut = "2015-09-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
 	
-	('SELECT idperiode FROM periode WHERE datedebut = "2014-09-01"', '24', 'A2', '11.1'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-06-16"' , '24', 'A2', '13.10'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-09-16"' , '24', 'A2', '12.10'),
+	(SELECT idperiode , '24', 'A2', '11.1' FROM periode WHERE datedebut = "2014-09-01");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '24', 'A2', '13.10' FROM periode WHERE datedebut = "2015-06-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '24', 'A2', '12.10' FROM periode WHERE datedebut = "2015-09-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
 	
-	('SELECT idperiode FROM periode WHERE datedebut = "2014-09-01"', '24', 'A3', '5.60'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-06-16"' , '24', 'A3', '7'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-09-16"' , '24', 'A3', '6.40'),
+	(SELECT idperiode , '24', 'A3', '5.60' FROM periode WHERE datedebut = "2014-09-01");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '24', 'A3', '7' FROM periode WHERE datedebut = "2015-06-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '24', 'A3', '6.40' FROM periode WHERE datedebut = "2015-09-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
 	
-	('SELECT idperiode FROM periode WHERE datedebut = "2014-09-01"', '24', 'B1', '86'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-06-16"' , '24', 'B1', '95'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-09-16"' , '24', 'B1', '91'),
+	(SELECT idperiode , '24', 'B1', '86' FROM periode WHERE datedebut = "2014-09-01");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '24', 'B1', '95' FROM periode WHERE datedebut = "2015-06-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '24', 'B1', '91' FROM periode WHERE datedebut = "2015-09-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
 	
-	('SELECT idperiode FROM periode WHERE datedebut = "2014-09-01"', '24', 'B2', '129'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-06-16"' , '24', 'B2', '142'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-09-16"' , '24', 'B2', '136'),
+	(SELECT idperiode , '24', 'B2', '129' FROM periode WHERE datedebut = "2014-09-01");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '24', 'B2', '142' FROM periode WHERE datedebut = "2015-06-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '24', 'B2', '136' FROM periode WHERE datedebut = "2015-09-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
 	
-	('SELECT idperiode FROM periode WHERE datedebut = "2014-09-01"', '24', 'C1', '189'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-06-16"' , '24', 'C1', '208'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-09-16"' , '24', 'C1', '199'),
+	(SELECT idperiode , '24', 'C1', '189' FROM periode WHERE datedebut = "2014-09-01");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '24', 'C1', '208' FROM periode WHERE datedebut = "2015-06-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '24', 'C1', '199' FROM periode WHERE datedebut = "2015-09-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
 	
-	('SELECT idperiode FROM periode WHERE datedebut = "2014-09-01"', '24', 'C2', '205'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-06-16"' , '24', 'C2', '226'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-09-16"' , '24', 'C2', '216'),
+	(SELECT idperiode , '24', 'C2', '205' FROM periode WHERE datedebut = "2014-09-01");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '24', 'C2', '226' FROM periode WHERE datedebut = "2015-06-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '24', 'C2', '216' FROM periode WHERE datedebut = "2015-09-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
 	
-	('SELECT idperiode FROM periode WHERE datedebut = "2014-09-01"', '24', 'C3', '268'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-06-16"' , '24', 'C3', '295'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-09-16"' , '24', 'C3', '282'),
+	(SELECT idperiode , '24', 'C3', '268' FROM periode WHERE datedebut = "2014-09-01");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '24', 'C3', '295' FROM periode WHERE datedebut = "2015-06-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '24', 'C3', '282' FROM periode WHERE datedebut = "2015-09-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
 
-	('SELECT idperiode FROM periode WHERE datedebut = "2014-09-01"', '11', 'A1', '18'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-06-16"' , '11', 'A1', '20'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-09-16"' , '11', 'A1', '19'),
+	(SELECT idperiode , '11', 'A1', '18' FROM periode WHERE datedebut = "2014-09-01");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '11', 'A1', '20' FROM periode WHERE datedebut = "2015-06-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '11', 'A1', '19' FROM periode WHERE datedebut = "2015-09-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
 	
-	('SELECT idperiode FROM periode WHERE datedebut = "2014-09-01"', '11', 'A2', '11.1'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-06-16"' , '11', 'A2', '13.10'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-09-16"' , '11', 'A2', '12.10'),
+	(SELECT idperiode , '11', 'A2', '11.1' FROM periode WHERE datedebut = "2014-09-01");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '11', 'A2', '13.10' FROM periode WHERE datedebut = "2015-06-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '11', 'A2', '12.10' FROM periode WHERE datedebut = "2015-09-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
 	
-	('SELECT idperiode FROM periode WHERE datedebut = "2014-09-01"', '11', 'A3', '5.60'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-06-16"' , '11', 'A3', '7'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-09-16"' , '11', 'A3', '6.40'),
+	(SELECT idperiode , '11', 'A3', '5.60' FROM periode WHERE datedebut = "2014-09-01");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '11', 'A3', '7' FROM periode WHERE datedebut = "2015-06-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '11', 'A3', '6.40' FROM periode WHERE datedebut = "2015-09-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
 	
-	('SELECT idperiode FROM periode WHERE datedebut = "2014-09-01"', '11', 'B1', '86'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-06-16"' , '11', 'B1', '95'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-09-16"' , '11', 'B1', '91'),
+	(SELECT idperiode , '11', 'B1', '86' FROM periode WHERE datedebut = "2014-09-01");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '11', 'B1', '95' FROM periode WHERE datedebut = "2015-06-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '11', 'B1', '91' FROM periode WHERE datedebut = "2015-09-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
 	
-	('SELECT idperiode FROM periode WHERE datedebut = "2014-09-01"', '11', 'B2', '129'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-06-16"' , '11', 'B2', '142'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-09-16"' , '11', 'B2', '136'),
+	(SELECT idperiode , '11', 'B2', '129' FROM periode WHERE datedebut = "2014-09-01");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '11', 'B2', '142' FROM periode WHERE datedebut = "2015-06-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '11', 'B2', '136' FROM periode WHERE datedebut = "2015-09-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
 	
-	('SELECT idperiode FROM periode WHERE datedebut = "2014-09-01"', '11', 'C1', '189'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-06-16"' , '11', 'C1', '208'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-09-16"' , '11', 'C1', '199'),
+	(SELECT idperiode , '11', 'C1', '189' FROM periode WHERE datedebut = "2014-09-01");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '11', 'C1', '208' FROM periode WHERE datedebut = "2015-06-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '11', 'C1', '199' FROM periode WHERE datedebut = "2015-09-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
 	
-	('SELECT idperiode FROM periode WHERE datedebut = "2014-09-01"', '11', 'C2', '205'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-06-16"' , '11', 'C2', '226'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-09-16"' , '11', 'C2', '216'),
+	(SELECT idperiode , '11', 'C2', '205' FROM periode WHERE datedebut = "2014-09-01");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '11', 'C2', '226' FROM periode WHERE datedebut = "2015-06-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '11', 'C2', '216' FROM periode WHERE datedebut = "2015-09-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
 	
-	('SELECT idperiode FROM periode WHERE datedebut = "2014-09-01"', '11', 'C3', '268'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-06-16"' , '11', 'C3', '295'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-09-16"' , '11', 'C3', '282'),
+	(SELECT idperiode , '11', 'C3', '268' FROM periode WHERE datedebut = "2014-09-01");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '11', 'C3', '295' FROM periode WHERE datedebut = "2015-06-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '11', 'C3', '282' FROM periode WHERE datedebut = "2015-09-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
 
-	('SELECT idperiode FROM periode WHERE datedebut = "2014-09-01"', '30', 'A1', '18'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-06-16"' , '30', 'A1', '20'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-09-16"' , '30', 'A1', '19'),
+	(SELECT idperiode , '30', 'A1', '18' FROM periode WHERE datedebut = "2014-09-01");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '30', 'A1', '20' FROM periode WHERE datedebut = "2015-06-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '30', 'A1', '19' FROM periode WHERE datedebut = "2015-09-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
 	
-	('SELECT idperiode FROM periode WHERE datedebut = "2014-09-01"', '30', 'A2', '11.1'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-06-16"' , '30', 'A2', '13.10'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-09-16"' , '30', 'A2', '12.10'),
+	(SELECT idperiode , '30', 'A2', '11.1' FROM periode WHERE datedebut = "2014-09-01");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '30', 'A2', '13.10' FROM periode WHERE datedebut = "2015-06-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '30', 'A2', '12.10' FROM periode WHERE datedebut = "2015-09-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
 	
-	('SELECT idperiode FROM periode WHERE datedebut = "2014-09-01"', '30', 'A3', '5.60'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-06-16"' , '30', 'A3', '7'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-09-16"' , '30', 'A3', '6.40'),
+	(SELECT idperiode , '30', 'A3', '5.60' FROM periode WHERE datedebut = "2014-09-01");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '30', 'A3', '7' FROM periode WHERE datedebut = "2015-06-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '30', 'A3', '6.40' FROM periode WHERE datedebut = "2015-09-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
 	
-	('SELECT idperiode FROM periode WHERE datedebut = "2014-09-01"', '30', 'B1', '86'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-06-16"' , '30', 'B1', '95'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-09-16"' , '30', 'B1', '91'),
+	(SELECT idperiode , '30', 'B1', '86' FROM periode WHERE datedebut = "2014-09-01");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '30', 'B1', '95' FROM periode WHERE datedebut = "2015-06-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '30', 'B1', '91' FROM periode WHERE datedebut = "2015-09-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
 	
-	('SELECT idperiode FROM periode WHERE datedebut = "2014-09-01"', '30', 'B2', '129'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-06-16"' , '30', 'B2', '142'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-09-16"' , '30', 'B2', '136'),
+	(SELECT idperiode , '30', 'B2', '129' FROM periode WHERE datedebut = "2014-09-01");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '30', 'B2', '142' FROM periode WHERE datedebut = "2015-06-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '30', 'B2', '136' FROM periode WHERE datedebut = "2015-09-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
 	
-	('SELECT idperiode FROM periode WHERE datedebut = "2014-09-01"', '30', 'C1', '189'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-06-16"' , '30', 'C1', '208'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-09-16"' , '30', 'C1', '199'),
+	(SELECT idperiode , '30', 'C1', '189' FROM periode WHERE datedebut = "2014-09-01");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '30', 'C1', '208' FROM periode WHERE datedebut = "2015-06-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '30', 'C1', '199' FROM periode WHERE datedebut = "2015-09-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
 	
-	('SELECT idperiode FROM periode WHERE datedebut = "2014-09-01"', '30', 'C2', '205'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-06-16"' , '30', 'C2', '226'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-09-16"' , '30', 'C2', '216'),
+	(SELECT idperiode , '30', 'C2', '205' FROM periode WHERE datedebut = "2014-09-01");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '30', 'C2', '226' FROM periode WHERE datedebut = "2015-06-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '30', 'C2', '216' FROM periode WHERE datedebut = "2015-09-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
 	
-	('SELECT idperiode FROM periode WHERE datedebut = "2014-09-01"', '30', 'C3', '268'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-06-16"' , '30', 'C3', '295'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-09-16"' , '30', 'C3', '282'),
+	(SELECT idperiode , '30', 'C3', '268' FROM periode WHERE datedebut = "2014-09-01");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '30', 'C3', '295' FROM periode WHERE datedebut = "2015-06-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '30', 'C3', '282' FROM periode WHERE datedebut = "2015-09-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
 
-	('SELECT idperiode FROM periode WHERE datedebut = "2014-09-01"', '25', 'A1', '18'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-06-16"' , '25', 'A1', '20'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-09-16"' , '25', 'A1', '19'),
+	(SELECT idperiode , '25', 'A1', '18' FROM periode WHERE datedebut = "2014-09-01");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '25', 'A1', '20' FROM periode WHERE datedebut = "2015-06-16");
+	INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '25', 'A1', '19' FROM periode WHERE datedebut = "2015-09-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
 	
-	('SELECT idperiode FROM periode WHERE datedebut = "2014-09-01"', '25', 'A2', '11.1'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-06-16"' , '25', 'A2', '13.10'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-09-16"' , '25', 'A2', '12.10'),
+	(SELECT idperiode , '25', 'A2', '11.1' FROM periode WHERE datedebut = "2014-09-01");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '25', 'A2', '13.10' FROM periode WHERE datedebut = "2015-06-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '25', 'A2', '12.10' FROM periode WHERE datedebut = "2015-09-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
 	
-	('SELECT idperiode FROM periode WHERE datedebut = "2014-09-01"', '25', 'A3', '5.60'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-06-16"' , '25', 'A3', '7'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-09-16"' , '25', 'A3', '6.40'),
+	(SELECT idperiode , '25', 'A3', '5.60' FROM periode WHERE datedebut = "2014-09-01");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '25', 'A3', '7' FROM periode WHERE datedebut = "2015-06-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '25', 'A3', '6.40' FROM periode WHERE datedebut = "2015-09-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
 	
-	('SELECT idperiode FROM periode WHERE datedebut = "2014-09-01"', '25', 'B1', '86'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-06-16"' , '25', 'B1', '95'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-09-16"' , '25', 'B1', '91'),
+	(SELECT idperiode , '25', 'B1', '86' FROM periode WHERE datedebut = "2014-09-01");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '25', 'B1', '95' FROM periode WHERE datedebut = "2015-06-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '25', 'B1', '91' FROM periode WHERE datedebut = "2015-09-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
 	
-	('SELECT idperiode FROM periode WHERE datedebut = "2014-09-01"', '25', 'B2', '129'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-06-16"' , '25', 'B2', '142'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-09-16"' , '25', 'B2', '136'),
+	(SELECT idperiode , '25', 'B2', '129' FROM periode WHERE datedebut = "2014-09-01");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '25', 'B2', '142' FROM periode WHERE datedebut = "2015-06-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '25', 'B2', '136' FROM periode WHERE datedebut = "2015-09-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
 	
-	('SELECT idperiode FROM periode WHERE datedebut = "2014-09-01"', '25', 'C1', '189'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-06-16"' , '25', 'C1', '208'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-09-16"' , '25', 'C1', '199'),
+	(SELECT idperiode , '25', 'C1', '189' FROM periode WHERE datedebut = "2014-09-01");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '25', 'C1', '208' FROM periode WHERE datedebut = "2015-06-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '25', 'C1', '199' FROM periode WHERE datedebut = "2015-09-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
 	
-	('SELECT idperiode FROM periode WHERE datedebut = "2014-09-01"', '25', 'C2', '205'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-06-16"' , '25', 'C2', '226'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-09-16"' , '25', 'C2', '216'),
+	(SELECT idperiode , '25', 'C2', '205' FROM periode WHERE datedebut = "2014-09-01");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '25', 'C2', '226' FROM periode WHERE datedebut = "2015-06-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '25', 'C2', '216' FROM periode WHERE datedebut = "2015-09-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
 	
-	('SELECT idperiode FROM periode WHERE datedebut = "2014-09-01"', '25', 'C3', '268'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-06-16"' , '25', 'C3', '295'),
-	('SELECT idperiode FROM periode WHERE datedebut = "2015-09-16"' , '25', 'C3', '282');
+	(SELECT idperiode , '25', 'C3', '268' FROM periode WHERE datedebut = "2014-09-01");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '25', 'C3', '295' FROM periode WHERE datedebut = "2015-06-16");
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	(SELECT idperiode , '25', 'C3', '282' FROM periode WHERE datedebut = "2015-09-16");
