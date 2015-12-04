@@ -451,7 +451,7 @@ INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
 	(SELECT idperiode , '22', 'B1', '95' FROM periode WHERE datedebut = "2015-06-16");
 	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
 	(SELECT idperiode , '22', 'B1', '91' FROM periode WHERE datedebut = "2015-09-16");
-	INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
 	
 	(SELECT idperiode , '22', 'B2', '129' FROM periode WHERE datedebut = "2014-09-01");
 	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
@@ -652,7 +652,7 @@ INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
 	(SELECT idperiode , '25', 'A1', '18' FROM periode WHERE datedebut = "2014-09-01");
 	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
 	(SELECT idperiode , '25', 'A1', '20' FROM periode WHERE datedebut = "2015-06-16");
-	INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
+	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
 	(SELECT idperiode , '25', 'A1', '19' FROM periode WHERE datedebut = "2015-09-16");
 	INSERT INTO `tarif` (`idperiode`, `idliaison`, `codetype`, `prix`)
 	
