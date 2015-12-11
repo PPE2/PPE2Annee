@@ -157,7 +157,8 @@
 				
 				
 				$quantites=array();
-				for($i=4;$i<(count($reponses)-9);$i++){
+				print_r($reponses);
+				for($i=4;$i<(4+count($tabTarifs));$i++){
 					$quantites[]=$reponses[$i];
 				}
 				//print_r($quantites);

@@ -42,6 +42,7 @@ INSERT INTO `bateau` (`nombateau`, `longueurbateau`, `largeurbateau`) VALUES
 ('Kor Ant', 0, 0),
 ('Ar Solen', 0, 0);
 
+
 -- --------------------------------------------------------
 
 --

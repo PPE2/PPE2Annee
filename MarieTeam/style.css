@@ -60,11 +60,12 @@ border-color:#77ABD6;
 table{
 	border-collapse:collapse;
 	empty-cells: hide;
-	box-shadow: 0px 0px 1px #1c1a19;
 	
 }
 
-
+tr{
+	background-color: #3497D0;
+}
 
 th{
 	background-color: #11589F;

@@ -79,20 +79,15 @@
 	if(isset($idLiaison) && isset($date)){
 		//Tableau Traversees
 		//Libelles categories
-		$tabLettres=array();
 		$libelleCategorie="";
 		$req="SELECT *  FROM categorie";
 		$sql = $conn->query($req);
-		//$nbCasesTabDeuxdim="";
 		while ($row = mysqli_fetch_array($sql)) {
 				$libelleCategorie.='<th>'.$row['codecategorie'].' '.$row['libellecategorie'].'</th>';
-				$tabLettres[]=$row['codecategorie'];
 			} 		
 			
 			
-		echo "<br /><br /><br /><br /><br /><br />";
-		
-		
+		echo "<br /><br /><br /><br /><br /><br />";	
 		//Affichage type Quiberon-Le Palais.
 		$req="SELECT portdepart, portarrivee  FROM liaison WHERE $idLiaison=liaison.idliaison";
 		$sql = $conn->query($req);										
@@ -132,75 +127,80 @@
 				$tabheures[]=$row['heuretraversee'];
 			}
 		}  
-		
 		//Requete du tabluea: places
 		// Recup Nb places de chaque traversee bateau
 		$tabCategorie=array();
 		
 		for($i=0;$i<count($tabBateau);$i++){
-				$tabCategorie[]=array('0','0','0','0','0','0','0','0','0','0','0','0');
+				$tabCategorie[]=array('0','0','0');
 		}
 		
-		
-		//ERREYR UCUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU
+		//print_r($tabBateau);
 		for($i=0;$i<count($tabBateau);$i++){
-			for($j=0;$j<count($tabLettres);$j++){
-				
-				$req="SELECT nbplaces FROM nbpassagers WHERE nombateau='$tabBateau[$i]'  AND codecategorie='$tabLettres[$j]'";
-				$sql = $conn->query($req);	
-				while ($row = mysqli_fetch_array($sql)) {
-					$tabCategorie[$i][$j]=$row['nbplaces'];
-				} 
-			}	
+			
+			$req="SELECT nbplaces FROM nbpassagers WHERE nombateau='$tabBateau[$i]'  AND codecategorie='A'";
+			$sql = $conn->query($req);	
+			while ($row = mysqli_fetch_array($sql)) {
+				$tabCategorie[$i][0]=$row['nbplaces'];
+			}  
+			
+			$req="SELECT nbplaces FROM nbpassagers WHERE nombateau='$tabBateau[$i]'  AND codecategorie='B'";
+			$sql = $conn->query($req);	
+			while ($row = mysqli_fetch_array($sql)) {
+				$tabCategorie[$i][1]=$row['nbplaces'];
+			}  
+			
+			$req="SELECT nbplaces FROM nbpassagers WHERE nombateau='$tabBateau[$i]'  AND codecategorie='C'";
+			$sql = $conn->query($req);	
+			while ($row = mysqli_fetch_array($sql)) {
+				$tabCategorie[$i][2]=$row['nbplaces'];
+			}  
 		}
 		
 		//Recup Nb places reservees sur chaque bateau
 		$tabReserv=array();
 		for($i=0;$i<count($tabBateau);$i++){
-				$tabReserv[]=array('0','0','0','0','0','0','0','0','0','0','0','0');
+				$tabReserv[]=array('0','0','0');
 		}
 		
 		for($i=0;$i<count($tabBateau);$i++){
-			for($j=0;$j<count($tabLettres);$j++){
-				$req="SELECT reservation.nbplaces FROM reservation, traversee WHERE reservation.idtraversee=traversee.idtraversee AND traversee.nombateau='$tabBateau[$i]' AND codecategorie='$tabLettres[$j]' AND  traversee.idtraversee=$tabtraverseeid[$i]";
-				$sql = $conn->query($req);	
-				while ($row = mysqli_fetch_array($sql)) {
-					$tabReserv[$i][$j]=$row['nbplaces'];
-				}
-				
+			$req="SELECT reservation.nbplaces FROM reservation, traversee WHERE reservation.idtraversee=traversee.idtraversee AND traversee.nombateau='$tabBateau[$i]' AND codecategorie='A' AND  traversee.idtraversee=$tabtraverseeid[$i]";
+			$sql = $conn->query($req);	
+			while ($row = mysqli_fetch_array($sql)) {
+				$tabReserv[$i][0]=$row['nbplaces'];
 			}
+
+			$req="SELECT reservation.nbplaces FROM reservation, traversee WHERE reservation.idtraversee=traversee.idtraversee AND traversee.nombateau='$tabBateau[$i]' AND codecategorie='B' AND  traversee.idtraversee=$tabtraverseeid[$i]";
+			$sql = $conn->query($req);	
+			while ($row = mysqli_fetch_array($sql)) {
+				$tabReserv[$i][1]=$row['nbplaces'];
+			}
+			
+			$req="SELECT reservation.nbplaces FROM reservation, traversee WHERE reservation.idtraversee=traversee.idtraversee AND traversee.nombateau='$tabBateau[$i]' AND codecategorie='C' AND  traversee.idtraversee=$tabtraverseeid[$i]";
+			$sql = $conn->query($req);	
+			while ($row = mysqli_fetch_array($sql)) {
+				$tabReserv[$i][2]=$row['nbplaces'];
+			}
+			
 		}
-		echo '<br /> <br />';
 		
 		//Differences des deux tableaux pour obtenir places restantes
 		$tabPlacesRestantes=array();
 		for($i=0;$i<count($tabBateau);$i++){
-				$tabPlacesRestantes[]=array('0','0','0','0','0','0','0','0','0','0','0','0');
+				$tabPlacesRestantes[]=array('0','0','0');
 		}
 		
-		$placesLettre="";
-		/* OLD
 		for($i=0;$i<count($tabBateau);$i++){
 			$tabPlacesRestantes[$i][0]= $tabCategorie[$i][0]-$tabReserv[$i][0];
 			$tabPlacesRestantes[$i][1]= $tabCategorie[$i][1]-$tabReserv[$i][1];
 			$tabPlacesRestantes[$i][2]= $tabCategorie[$i][2]-$tabReserv[$i][2];
-		}*/
-		
-		for($i=0;$i<count($tabBateau);$i++){
-			for($j=0;$j<count($tabLettres);$j++){
-				$tabPlacesRestantes[$i][$j]= $tabCategorie[$i][$j]-$tabReserv[$i][$j];
-			}
 		}
 		
 		//Affichage tableau
 		for($i=0;$i<count($tabtraversee);$i++){
-			//Concatenation en tableau html des categories regroupant les places
-			for($j=0;$j<count($tabLettres);$j++){
-				$placesLettre.='<td>'.strval($tabPlacesRestantes[$i][$j]).'</td>';
-			}
-			echo $tabtraversee[$i].$placesLettre.'<td><input type="radio" name="boutons" onChange="document.getElementById(\'valbouton\').value='.$tabtraverseeid[$i].'"> </td></tr>';
+			echo $tabtraversee[$i].'<td>'.strval($tabPlacesRestantes[$i][0]).'</td><td>'.strval($tabPlacesRestantes[$i][1]).'</td><td>'.strval($tabPlacesRestantes[$i][2]).'</td>'.'<td><input type="radio" name="boutons" onChange="document.getElementById(\'valbouton\').value='.$tabtraverseeid[$i].'"> </td></tr>';
+			
 			echo '<input type="hidden" name="valutiles" id="'.$tabtraverseeid[$i].'" value="'.$tabheures[$i].'" />';
-			$placesLettre='';
 			
 		}
 		echo '<input type="hidden" name="valutiles" id="valbouton" />';
@@ -212,7 +212,6 @@
 		}else{
 			echo '<input type="submit" name="btn_enregistrer" value="Enregistrer" onClick="reserver('.$idLiaison.', document.getElementById(\'valbouton\').value , \''.$date.'\', document.getElementById(document.getElementById(\'valbouton\').value ).value)">';
 		}
-		
 	}											
 												
 												
