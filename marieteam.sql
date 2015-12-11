@@ -16,10 +16,13 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8 */;
 
+CREATE DATABASE MarieTeam DEFAULT CHARACTER SET latin1 COLLATE latin1_general_ci;
+USE `MarieTeam`;
 --
 -- Base de données :  `marieteam`
 --
-
+CREATE DATABASE MarieTeam
+USE MarieTeam
 -- --------------------------------------------------------
 
 --
