@@ -1,0 +1,18 @@
+import java.util.ArrayList;
+public  class Passerelle {
+    ArrayList <Equipement> lesEquipements = new ArrayList();
+    ArrayList <BateauVoyageur> lesBateauxVoyageurs = new ArrayList();
+    ArrayList <Equipement> lesEquipementVide = new ArrayList();
+    
+    public  ArrayList <Equipement> chargerLesEquipements(String idBateau){
+        for (BateauVoyageur unBateauVoyageur : lesBateauxVoyageurs){
+            if (idBateau == unBateauVoyageur.getIdBat()){
+                lesEquipements = unBateauVoyageur.getLesEquipements();
+            }
+        }
+        return lesEquipements;
+    }
+    public ArrayList <BateauVoyageur> chargerLesBateauxVoyageurs(){
+        
+    }
+}
