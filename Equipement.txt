@@ -1,0 +1,23 @@
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+/**
+ *
+ * @author Administrateur
+ */
+public class Equipement {
+    private String idEquip, libEquip;
+    
+    public Equipement(String unId, String unLib){
+        idEquip=unId;
+        libEquip=unLib;
+    }
+    
+    public String toString(){
+        return libEquip;
+    }
+}
