@@ -1,0 +1,27 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+/**
+ *
+ * @author Administrateur
+ */
+public class Bateau {
+   private String idBat, nomBat;
+   private int longueurBat, largeurBat;
+   
+   public Bateau(String unId, String unNom, int uneLongueur, int uneLargeur){
+       idBat=unId;
+       nomBat=unNom;
+       longueurBat=uneLongueur;
+       largeurBat=uneLargeur;
+   }
+   
+   public String toString(){
+     return "Nom du bateau: " + nomBat + System.getProperty("line.separator") + "Longueur: " + longueurBat + System.getProperty("line.separator") + "Largeur: " + largeurBat;   
+   }
+   
+   
+}
